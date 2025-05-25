@@ -1,0 +1,351 @@
+body {
+  font-family: 'PT Sans Caption', Arial, sans-serif;
+  
+    background-image: url('website-layout-groot-leeg.svg');
+    background-size: cover; /* Ensures the image covers the entire viewport */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    margin: 0; /* Removes default margin */
+    height: 100vh; /* Ensures the body takes up the full height of the viewport */
+  
+    
+}
+
+.panorama {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  aspect-ratio: 7887 / 768;
+
+  /* background-image: linear-gradient(90deg, red, blue);*/
+
+   /*background-size:  100%;*/
+}
+
+.panorama svg {
+  width: auto;
+  height: 100%;
+  display: block;
+}
+/* Basic Styling */
+
+.popup {
+  display: none; /* default hidden */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show popup when checkbox is checked */
+input[id^="popup-toggle-"]:checked + .popup {
+  display: block;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.5); /* semi-transparent white */
+  
+}
+
+/* Popup content box */
+.popup-content {
+  background-color: #1e90ff;;
+  padding: 30px;
+  width: 750px;
+  margin: 50px auto;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  line-height: 1.6; 
+  font-size: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+
+
+}
+.popup-content a {
+  font-size: 1rem; /* smaller than the surrounding text */
+  color: #0044cc;
+  text-decoration: underline;
+  display: inline-block;
+  margin-top: 2px;
+  text-align: center;
+}
+.close-button {
+  text-align: left;
+  color: #ffffff; 
+}
+.text-blue {
+  color: #ffffff;
+}
+
+.text-darkblue {
+  color: #ffffff;
+}
+
+
+/* Background overlay closes popup */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+
+
+ /*svg .mevrouw_en_fijn:hover,
+ svg .mevrouw_en_fijn:hover * {
+  background-color: black;
+  /*cursor: pointer;
+  stroke: rgb(25, 0, 255);
+  /* fill: brown; */
+ 
+
+ a img {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+a img:hover {
+  transform: scale(0.5); /* Zoom on hover */
+}
+
+
+
+body:has(svg:target) {
+  overflow: clip;
+}
+
+a svg * {
+  pointer-events: all;
+  cursor: pointer;
+}
+a svg:has(:hover) *.cls-1 {
+  fill: yellow;
+}
+
+a:has(svg) + .popup {
+  position: fixed;
+  top: 50%; left: 50%;
+  translate: -50% -50%;
+  width: min( 600px, 100% );
+  height: auto;
+
+  display: none;
+}
+a:has(svg:target) + .popup {
+  display: block;
+}
+
+
+
+a:has(#dolfijn_man){
+  position: absolute;
+  top: 60%; left: 80%;
+  translate: -50% -50%;
+  
+}
+
+label:has(svg) {
+  position: absolute;
+  height: auto;
+
+  translate: -50% -50%;
+  pointer-events: none;
+
+  display: inline-block;
+}
+label svg {
+  width: 100%; 
+  height: auto;
+
+  display: block;
+}
+label svg * {
+  pointer-events: all;
+}
+label:has(svg :hover) {
+  scale: 1.1;
+  /* backdrop-filter:blur(10px); */
+}
+label:has(svg :hover) path,
+label:has(svg :hover) line {
+  stroke-width: 3;
+}
+
+
+
+a:has(#naam){
+  position: absolute;
+  top: 60%; left: 20%;
+  translate: -50% -50%;
+}
+#naam {
+  width: max(1700px, 100vw);
+  height: auto;
+
+  pointer-events: none;
+}
+label:has(#naam) {
+  top: 30vh; left: 23vw;
+
+  width: max( 300px, 100vw );
+}
+
+
+
+a:has(#map){
+  position: absolute;
+  top: 60%; left: 20%;
+  translate: -50% -50%;
+}
+#map {
+  width: max(1500px, 100vw);
+  height: auto;
+
+  pointer-events: none;
+}
+label:has(#map) {
+  top: 50vh; left: 660vw;
+
+  width: max( 300px, 50vw );
+}
+
+
+label:has(#enjoyer) {
+  top: 52vh; left: 615vw;
+  width: max(700px, 80vw);
+}
+#enjoyer .cls-1 {
+  fill: none;
+  stroke: red;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* stroke-width: 2; */
+  pointer-events: all;
+}
+#enjoyer:has(:hover) .cls-1 {
+  fill: yellow;
+}
+
+
+label:has(#dolfijn_dame) {
+  top: 50vh; left: 1205vw;
+
+  width: max( 100px, 110vw );
+}
+#dolfijn_dame .st0{
+  fill:none;
+  stroke:red;
+;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+#dolfijn_dame .st1{
+  fill:#1D1D1B;
+  stroke:red;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-miterlimit:10;
+}
+#dolfijn_dame:has(:hover) .st0,
+#dolfijn_dame:has(:hover) .st1 {
+  stroke: purple;
+  stroke-width: 4;
+}
+
+
+
+a:has(#commando){
+  position: absolute;
+  top: 60%; left: 20%;
+  translate: -50% -50%;
+}
+#commando {
+  width: max(1300px, 100vw);
+  height: auto;
+
+  pointer-events: none;
+}
+label:has(#commando) {
+  top: 40vh; left: 435vw;
+
+  width: max( 2500px, 150vw );
+}
+
+
+#commando .cls-1 {
+  fill: none;
+  stroke: red;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+#commando:has(:hover) .cls-1 {
+  fill: yellow;
+}
+
+
+
+
+
+
+a:has(#met_dolfijn){
+  position: absolute;
+  top: 60%; left: 20%;
+  translate: -50% -50%;
+}
+#met_dolfijn {
+  width: max( 100px, 100vw ); 
+  height: auto;
+
+  pointer-events: none;
+}
+label:has(#met_dolfijn) {
+  top: 20vh; left: 150vw;
+
+  width: max( 10px, 50vw );
+}
+#met_dolfijn .cls-1 {
+  fill: none;
+  stroke: red;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+#met_dolfijn:has(:hover) .cls-1 {
+  fill: yellow;
+}
+
+
+
+a:has(#springen){
+  position: absolute;
+  top: 60%; left: 20%;
+  translate: -50% -50%;
+}
+#springen {
+  width: max( 1300px, 120vw ); 
+  height: auto;
+
+  pointer-events: none;
+}
+label:has(#springen) {
+  top: 29vh; left: 1000vw;
+  width: max( 400px, 40vw );
+}
+#springen .cls-1 {
+  fill: none;
+  stroke: red;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+#springen:has(:hover) .cls-1 {
+  fill: yellow;
+}
+
+
+
+
